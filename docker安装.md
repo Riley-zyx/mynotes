@@ -52,6 +52,8 @@ unset all_proxy
    {
        "registry-mirrors": ["https://docker.hpcloud.cloud"]
    }
+   EOF
+
    ```
 2. 重新加载该文件
 
