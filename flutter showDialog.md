@@ -1,6 +1,6 @@
 ## 1 自定义dialog
 
-```apache
+```dart
 showDialog(
      barrierColor:
      Colors.black.withOpacity(0), //设置透明度：0就是完全透明，1不透明

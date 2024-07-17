@@ -1,0 +1,1 @@
+## Column 必须直接包裹在一个有容器大小的container或Sizedbox中，其mainAxisAlignment crossAxisAlignment 才会生效
