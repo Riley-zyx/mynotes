@@ -27,5 +27,6 @@ load 和 import 命令的区别：https://blog.csdn.net/qq_33204709/article/deta
 
 ```apache
 docker load < myimage.tar
+docker images   //查看id
 docker tag a01baa71e563 mubuntu:flutter-elinux
 ```
