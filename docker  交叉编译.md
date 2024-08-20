@@ -42,8 +42,12 @@ step6: **然后在自己电脑的项目下面执行**
 
 如果直接flutter-elinux build elinux，那就是构建pc用的**x64**版本了，然后你要构建不同后端的，就用--target-backend-type 有这几个**wayland** (default), **gbm**, eglstream, x11
 
+flutter-elinux build elinux --target-arch=arm64 --target-compiler-triple=aarch64-linux-gnu --target-sysroot=/home/riley/ubuntu2204_arm64_sysroot --target-backend-type x11
+
 ```apache
 flutter-elinux build elinux --target-arch=arm64 --target-compiler-triple=aarch64-linux-gnu --target-sysroot=/home/你电脑用户名/ubuntu2204_arm64_sysroot
+
+flutter-elinux build elinux --target-arch=arm64 --target-compiler-triple=aarch64-linux-gnu --target-sysroot=/home/riley/ubuntu2204_arm64_sysroot --target-backend-type x11
 ```
 
 注意：若本机只有C++11，直接按照上面命令，若本机有其他版本，要加上
@@ -53,9 +57,6 @@ flutter-elinux build elinux --target-arch=arm64 --target-compiler-triple=aarch64
 ```
 
 ![1721803230590](images/docker交叉编译/1721803230590.png)
-
-
-
 
 # NBUI docker 交叉编译（算不上真正交叉编译）慢  几百秒
 
