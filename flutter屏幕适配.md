@@ -1,9 +1,50 @@
 # flutter屏幕适配
 
-### 屏幕适配
+### 屏幕适配研究
 
 ```dart
+import 'dart:ui';
 
+import 'package:flutter/widgets.dart';
+
+class SizeUtils {
+  SizeUtils._();
+  static double screenW() {
+    return window.physicalSize.width / window.devicePixelRatio;
+  }
+
+  static double screenH() {
+    return window.physicalSize.height / window.devicePixelRatio;
+  }
+
+  static double screenWidthPX() {
+    return window.physicalSize.width;
+  }
+
+  static double screenHeightPX() {
+    return window.physicalSize.height;
+  }
+
+  static double statusBar(BuildContext context) {
+    return View.of(context).padding.top / View.of(context).devicePixelRatio;
+  }
+
+  static double bottomBar() {
+    return window.padding.bottom / window.devicePixelRatio;
+  }
+}
+
+extension doubleFit on double {
+  double get px {
+    return this * window.physicalSize.width / window.devicePixelRatio / 1920.0;
+  }
+}
+
+extension intFit on int {
+  double get px {
+    return this * window.physicalSize.width / window.devicePixelRatio / 1920.0;
+  }
+}
 ```
 
 `px` getter的目的是将设计稿上的像素尺寸转换为当前设备上的逻辑像素尺寸。设计稿通常是基于某个特定的屏幕分辨率（在这里是1920像素宽）来制作的。当你在应用中使用这些设计稿上的尺寸时，需要将这些尺寸适配到不同分辨率的设备上。
@@ -12,7 +53,7 @@
 
 - `this * window.physicalSize.width / window.devicePixelRatio / 1920.0;`
   
-  - `this`: 代表当前调用`px`方法的`double`或`int`值，即设计稿上的像素尺寸。
+  - `this`: 代表当前调用`px`方法的`double`或`int`值，即<mark>设计稿上的像素尺寸</mark>。
   - `window.physicalSize.width`: 获取设备屏幕的物理宽度（以像素为单位）。
   - `window.devicePixelRatio`: 获取设备像素比（DPR），即物理像素与逻辑像素的比例。
   - `1920.0`: 假设设计稿是基于1920像素宽的屏幕分辨率。

@@ -94,8 +94,6 @@ class FilterDialog extends StatefulWidget {
 
 请注意，在直接使用函数类型时，由于`confirmCallBack`没有指定泛型类型参数，所以这里使用了`dynamic`作为参数类型。
 
-
-
 ## 方法2：广播
 
 主要逻辑分为广播和接收
@@ -172,8 +170,6 @@ Class Constants{
     }, context: this);
 ```
 
-
-
 响应式编程
 
 1. `T get value => _value;`
@@ -202,10 +198,6 @@ Class Constants{
    - 在Flutter中，这通常用于更新UI，因为当`ChangeNotifier`对象的状态改变时，依赖于该状态的Widgets将会重新构建。
 
 综上所述，这段代码定义了一个可观察的属性`value`，当属性值发生变化时，会通知所有监听器。这种模式在Flutter中非常常见，用于实现响应式编程，其中UI可以根据模型的状态变化自动更新。
-
-
-
-
 
 ```dart
 import 'dart:convert';
@@ -730,15 +722,4 @@ void _segmentationprint(String msg) {
   }
   print("------- split log end -------");
 }
-
 ```
-
-
-
-
-
-
-
-
-
-
